@@ -1,0 +1,87 @@
+Licencia de uso de GÉNESIS
+Proprietary License — GÉNESIS
+
+Copyright (c) 2026 SystemOrlando · Brakescode. Todos los derechos reservados. / All rights reserved.
+
+================================================================================
+ESPAÑOL
+================================================================================
+
+1. PROPIEDAD
+   GÉNESIS (la aplicación de escritorio, su código fuente, su diseño, sus
+   recursos gráficos, sus textos y su arquitectura) es propiedad de su autor y
+   está protegido por las leyes de derechos de autor. Este software se licencia,
+   no se vende.
+
+2. LO QUE SÍ PUEDES HACER
+   Instalar y usar GÉNESIS en los ordenadores que controles, para tus propios
+   fines, personales o internos de tu organización.
+
+3. LO QUE NO PUEDES HACER
+   Sin permiso escrito del autor, no puedes:
+   a) Descompilar, desensamblar ni aplicar ingeniería inversa al programa, salvo
+      en la medida estricta que una ley imperativa te permita pese a esta
+      prohibición.
+   b) Copiar, redistribuir, revender, sublicenciar ni poner a disposición de
+      terceros el programa o partes de él.
+   c) Modificar el programa o crear obras derivadas para distribuirlas.
+   d) Usar el código, el diseño o cualquier parte de GÉNESIS como material para
+      entrenar, afinar o evaluar modelos de inteligencia artificial, ni
+      incorporarlo a conjuntos de datos con ese fin.
+   e) Quitar o alterar los avisos de autoría, marca o licencia.
+   f) Eludir, desactivar o quitar las medidas técnicas de protección del
+      programa (la ofuscación, la comprobación de firmas de las
+      actualizaciones), ni extraer sus recursos del instalador para usarlos
+      fuera de GÉNESIS.
+   g) Publicar o compartir el instalador fuera de la página oficial de
+      descargas. Quien quiera probar GÉNESIS debe bajarlo de allí.
+
+4. COMPONENTES DE TERCEROS
+   GÉNESIS usa componentes de código abierto, cada uno bajo su propia licencia
+   (por ejemplo MIT, Apache-2.0, BSD). Esas licencias se respetan y prevalecen
+   para esos componentes. Esta licencia cubre la obra de GÉNESIS en su conjunto,
+   no esos componentes por separado.
+
+5. SIN GARANTÍA
+   El software se entrega "tal cual", sin garantía de ningún tipo. El autor no
+   responde por daños derivados de su uso, en la medida que la ley lo permita.
+
+6. CESE
+   Esta licencia termina de forma automática si incumples cualquiera de sus
+   condiciones. Al terminar, debes dejar de usar el programa y borrar tus copias.
+
+7. VERSIÓN BETA
+   Mientras GÉNESIS se distribuya como «beta»:
+   a) Es una versión de prueba. Puede tener errores, perder datos de la propia
+      app o dejar de funcionar. No la uses como única copia de información
+      importante ni para tareas críticas.
+   b) Recibirá actualizaciones. La app avisa cuando hay una versión nueva y la
+      instala cuando tú lo confirmas; cada actualización se rige por esta
+      licencia. El autor puede terminar la beta en cualquier momento.
+   c) Si nos envías ideas, comentarios o reportes de errores (por ejemplo, desde
+      «Mensajes de mejora»), nos permites usarlos libremente para mejorar
+      GÉNESIS, sin obligación de pago ni de atribución. Solo se envía lo que
+      escribes y, si lo marcas, la versión de la app, el sistema operativo y el
+      motor que usas; nunca tus archivos, conversaciones ni claves.
+   d) Para dudas, permisos o reportes: contacto@brakescode.com.
+
+================================================================================
+ENGLISH (summary; the Spanish text above prevails)
+================================================================================
+
+GÉNESIS is proprietary software, licensed and not sold. You may install and use
+it on computers you control. You may NOT reverse engineer, decompile, copy,
+redistribute, resell, sublicense, or create derivative works for distribution,
+NOR use its code, design, or any part of it to train, fine-tune, or evaluate
+artificial-intelligence models. Open-source components keep their own licenses.
+You may not circumvent its technical protections (obfuscation, update signature
+checks) nor share the installer outside the official download page.
+Provided "as is", without warranty. This license terminates automatically upon
+breach.
+
+BETA: this is a test version; it may contain bugs or stop working, and it receives
+updates that you confirm in the app. Feedback you send us may be used freely to
+improve GÉNESIS. Only what you write (and, if you opt in, app version, OS and
+engine) is sent; never your files, conversations or keys.
+
+Para permisos o licencias comerciales: contacto@brakescode.com
