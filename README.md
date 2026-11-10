@@ -1,5 +1,15 @@
 # GÉNESIS · beta
 
+<p align="center">
+  <a href="https://systemorlando.github.io/genesis-app/"><img src="demo.gif" alt="GÉNESIS en acción: el inicio de la app y un recorrido por sus paneles" width="800" /></a>
+</p>
+
+<p align="center">
+  <a href="https://systemorlando.github.io/genesis-app/"><b>▶ Ver el recorrido interactivo</b></a> ·
+  <a href="docs/genesis-beta.mp4">Video completo (MP4)</a> ·
+  <a href="../../releases/latest"><b>Descargar la beta</b></a>
+</p>
+
 GÉNESIS es un agente de escritorio: le pides algo en palabras normales y lo hace en tu computadora. Abre programas, busca y ordena archivos, escribe documentos, programa y se conecta con tus servicios (Drive, Gmail, Calendar, GitHub, Notion y más). Lo desarrolla **Brakescode**.
 
 > **Esta es una versión beta.** Puede tener errores o cambiar de un día a otro. Si algo falla, cuéntanos: tu reporte decide qué arreglamos primero.

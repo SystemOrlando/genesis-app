@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GÉNESIS · beta</title>
+<meta name="description" content="GÉNESIS, tu agente en tu PC. Recorrido interactivo por la beta de Brakescode." />
+<meta property="og:title" content="GÉNESIS · beta" />
+<meta property="og:description" content="Tu agente, en tu PC. Pídele lo que quieras y lo hace en tu computadora." />
+<meta property="og:image" content="img/ahora.jpg" />
+<style>
+  @font-face { font-family: "Rethink"; src: url("fonts/rethink-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; unicode-range: U+0000-00FF; font-display: swap; }
+  @font-face { font-family: "Rethink"; src: url("fonts/rethink-sans-latin-ext-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root {
+    --suelo: #0b0b0e; --panel: #131318; --fila: #1b1b22; --tinta: #edeae4; --tinta-2: #b9b3aa; --tinta-3: #7d776f; --acento: #8e9bff; --borde: rgba(237, 234, 228, 0.09);
+  }
+  :root[data-theme="light"] { --suelo: #f4f2ed; --panel: #ffffff; --fila: #ebe8e1; --tinta: #16171a; --tinta-2: #4b4a47; --tinta-3: #7a7770; --acento: #4f5de0; --borde: rgba(22, 23, 26, 0.1); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--suelo); color: var(--tinta); font-family: "Rethink", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { background: radial-gradient(1200px 600px at 50% -10%, color-mix(in oklab, var(--acento) 18%, transparent), transparent 70%), var(--suelo); min-height: 100vh; }
+  a { color: inherit; }
+  .envoltura { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; gap: 16px; }
+  .marca { font-weight: 800; letter-spacing: 0.2em; font-size: 20px; }
+  .marca span, .titulo span { color: var(--acento); }
+  .pildora { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; border: 1px solid var(--borde); border-radius: 999px; padding: 5px 11px; color: var(--tinta-2); }
+  .heroe { text-align: center; padding: 44px 0 32px; }
+  .titulo { font-size: clamp(44px, 9vw, 96px); font-weight: 800; letter-spacing: 0.16em; text-indent: 0.16em; line-height: 1; }
+  .lema { margin-top: 18px; font-size: clamp(18px, 2.6vw, 24px); color: var(--tinta-2); }
+  .acciones { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .boton { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 999px; font-weight: 800; font-size: 16px; text-decoration: none; border: 1px solid var(--borde); transition: transform 160ms ease, background-color 160ms ease; }
+  .boton:hover { transform: translateY(-1px); }
+  .boton-primario { background: var(--tinta); color: var(--suelo); border-color: transparent; }
+  .boton-secundario { background: var(--panel); }
+  .reproductor { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; margin-top: 16px; }
+  @media (max-width: 900px) { .reproductor { grid-template-columns: 1fr; } }
+  .marco { position: relative; border-radius: 20px; overflow: hidden; background: #000; border: 1px solid var(--borde); box-shadow: 0 40px 100px -40px rgba(0, 0, 0, 0.8); aspect-ratio: 16 / 9; }
+  video { display: block; width: 100%; height: 100%; background: #000; }
+  .capitulos { background: var(--panel); border: 1px solid var(--borde); border-radius: 20px; padding: 10px; display: flex; flex-direction: column; gap: 2px; max-height: 100%; overflow: auto; }
+  @media (max-width: 900px) { .capitulos { flex-direction: row; overflow-x: auto; padding: 8px; } }
+  .capitulos h2 { font-size: 12px; letter-spacing: 0.12em; color: var(--tinta-3); padding: 8px 10px 6px; font-weight: 700; }
+  @media (max-width: 900px) { .capitulos h2 { display: none; } }
+  .capitulo { all: unset; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 12px; color: var(--tinta-2); font-size: 15px; font-weight: 600; white-space: nowrap; }
+  .capitulo:hover { background: var(--fila); color: var(--tinta); }
+  .capitulo:focus-visible { outline: 2px solid var(--acento); outline-offset: 1px; }
+  .capitulo[aria-current="true"] { background: var(--fila); color: var(--tinta); }
+  .capitulo time { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--tinta-3); min-width: 34px; }
+  .capitulo[aria-current="true"] time { color: var(--acento); }
+  section.paneles { padding: 64px 0 24px; }
+  .seccion-titulo { font-size: clamp(26px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; }
+  .seccion-texto { margin-top: 8px; color: var(--tinta-2); font-size: 17px; }
+  .galeria { margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .tarjeta { all: unset; cursor: pointer; display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; overflow: hidden; transition: transform 200ms ease, border-color 200ms ease; }
+  .tarjeta:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--acento) 50%, transparent); }
+  .tarjeta:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+  .tarjeta img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; background: #000; }
+  .tarjeta div { padding: 14px 16px 16px; }
+  .tarjeta b { display: block; font-size: 17px; }
+  .tarjeta span { display: block; margin-top: 4px; color: var(--tinta-2); font-size: 14px; line-height: 1.4; }
+  footer { padding: 48px 0 40px; color: var(--tinta-3); font-size: 14px; text-align: center; line-height: 1.7; }
+  footer b { color: var(--tinta-2); }
+  .tema { all: unset; cursor: pointer; border: 1px solid var(--borde); border-radius: 999px; padding: 6px 12px; font-size: 13px; color: var(--tinta-2); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+  <header>
+    <span class="marca">G<span>É</span>NESIS</span>
+    <span style="display:flex;gap:10px;align-items:center"><span class="pildora">BETA</span><button class="tema" id="tema" type="button">Tema</button></span>
+  </header>
+
+  <section class="heroe">
+    <h1 class="titulo">G<span>É</span>NESIS</h1>
+    <p class="lema">Tu agente, en tu PC. Pídele lo que quieras en palabras normales y lo hace en tu computadora.</p>
+    <div class="acciones">
+      <a class="boton boton-primario" href="https://github.com/SystemOrlando/genesis-app/releases/latest">Descargar la beta para Windows</a>
+      <a class="boton boton-secundario" href="https://github.com/SystemOrlando/genesis-app">Ver en GitHub</a>
+    </div>
+  </section>
+
+  <div class="reproductor">
+    <div class="marco"><video id="video" src="genesis-beta.mp4" poster="img/ahora.jpg" controls playsinline preload="metadata"></video></div>
+    <nav class="capitulos" aria-label="Capítulos del video">
+      <h2>CAPÍTULOS</h2>
+    </nav>
+  </div>
+
+  <section class="paneles">
+    <h2 class="seccion-titulo">Todo lo que hace</h2>
+    <p class="seccion-texto">Toca un panel para verlo en el video.</p>
+    <div class="galeria" id="galeria"></div>
+  </section>
+
+  <footer>
+    GÉNESIS es una beta: puede tener errores. Cuéntanos qué mejorar desde el botón BETA de la app o en <a href="mailto:contacto@brakescode.com">contacto@brakescode.com</a>.<br />
+    © 2026 SystemOrlando · <b>Brakescode</b>. Software propietario: ver la <a href="https://github.com/SystemOrlando/genesis-app/blob/main/LICENSE">licencia</a>.
+  </footer>
+</div>
+<script>
+  // Capítulos del video (segundos) y los paneles que muestran. El mismo orden que en el video.
+  const CAPITULOS = [
+    { t: 0, nombre: "Brakescode" },
+    { t: 3.6, nombre: "El inicio" },
+    { t: 13.0, nombre: "Pídele lo que quieras", img: "ahora", texto: "Lo hace en tu PC y te cuenta cada paso." },
+    { t: 16.6, nombre: "Cada paso, a la vista", img: "historial-detalle", texto: "Qué herramienta usó y cuánto tardó." },
+    { t: 20.2, nombre: "Conecta tus servicios", img: "conectores-gmail", texto: "Gmail, Drive, Calendar, GitHub, Notion, Canva y más." },
+    { t: 23.8, nombre: "Skills expertas", img: "skills", texto: "PDF, Excel, presentaciones, diseño y código." },
+    { t: 27.4, nombre: "Equipo de agentes", img: "equipo", texto: "Programan, prueban y revisan en paralelo; tú eliges qué integrar." },
+    { t: 31.0, nombre: "Modelo local", img: "ajustes-modelo-local", texto: "Una IA en tu PC: sin límites de uso y sin internet." },
+    { t: 34.6, nombre: "Tú pones los límites", img: "directrices", texto: "Qué no puede tocar, y en qué horario." },
+    { t: 38.2, nombre: "Con personalidad", img: "avatar", texto: "Su nombre, sus ojos y su voz, a tu gusto." },
+    { t: 41.8, nombre: "Beta abierta", img: "beta", texto: "Cuéntanos qué mejorar con un clic." },
+    { t: 45.4, nombre: "Descárgalo" },
+  ];
+  const video = document.getElementById("video");
+  const nav = document.querySelector(".capitulos");
+  const galeria = document.getElementById("galeria");
+  const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  const ir = (t) => {
+    video.currentTime = t + 0.05;
+    video.play().catch(() => {});
+    if (window.matchMedia("(max-width: 900px)").matches) video.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+  const botones = CAPITULOS.map((c) => {
+    const b = document.createElement("button");
+    b.className = "capitulo";
+    b.type = "button";
+    b.innerHTML = `<time>${mmss(c.t)}</time><span></span>`;
+    b.querySelector("span").textContent = c.nombre;
+    b.addEventListener("click", () => ir(c.t));
+    nav.appendChild(b);
+    return b;
+  });
+  CAPITULOS.filter((c) => c.img).forEach((c) => {
+    const b = document.createElement("button");
+    b.className = "tarjeta";
+    b.type = "button";
+    b.innerHTML = `<img alt="" loading="lazy" /><div><b></b><span></span></div>`;
+    b.querySelector("img").src = `img/${c.img}.jpg`;
+    b.querySelector("img").alt = `Panel: ${c.nombre}`;
+    b.querySelector("b").textContent = c.nombre;
+    b.querySelector("span").textContent = c.texto;
+    b.addEventListener("click", () => { video.scrollIntoView({ behavior: "smooth", block: "center" }); ir(c.t); });
+    galeria.appendChild(b);
+  });
+  // El capítulo que se está viendo queda marcado.
+  video.addEventListener("timeupdate", () => {
+    let actual = 0;
+    CAPITULOS.forEach((c, i) => { if (video.currentTime >= c.t) actual = i; });
+    botones.forEach((b, i) => {
+      const era = b.getAttribute("aria-current") === "true";
+      b.setAttribute("aria-current", i === actual ? "true" : "false");
+      // En el celular los capítulos son una tira: el que se está viendo se desliza a la vista.
+      if (i === actual && !era && window.matchMedia("(max-width: 900px)").matches) {
+        nav.scrollTo({ left: b.offsetLeft - 8, behavior: "smooth" });
+      }
+    });
+  });
+  // Tema claro u oscuro; se recuerda en este navegador.
+  const raiz = document.documentElement;
+  try { const g = localStorage.getItem("genesis-demo-tema"); if (g) raiz.dataset.theme = g; } catch (e) {}
+  document.getElementById("tema").addEventListener("click", () => {
+    raiz.dataset.theme = raiz.dataset.theme === "light" ? "dark" : "light";
+    try { localStorage.setItem("genesis-demo-tema", raiz.dataset.theme); } catch (e) {}
+  });
+</script>
+</body>
+</html>
