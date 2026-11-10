@@ -99,18 +99,112 @@
 <script>
   // Capítulos del video (segundos) y los paneles que muestran. El mismo orden que en el video.
   const CAPITULOS = [
-    { t: 0, nombre: "Brakescode" },
-    { t: 3.6, nombre: "El inicio" },
-    { t: 13.0, nombre: "Pídele lo que quieras", img: "ahora", texto: "Lo hace en tu PC y te cuenta cada paso." },
-    { t: 16.6, nombre: "Cada paso, a la vista", img: "historial-detalle", texto: "Qué herramienta usó y cuánto tardó." },
-    { t: 20.2, nombre: "Conecta tus servicios", img: "conectores-gmail", texto: "Gmail, Drive, Calendar, GitHub, Notion, Canva y más." },
-    { t: 23.8, nombre: "Skills expertas", img: "skills", texto: "PDF, Excel, presentaciones, diseño y código." },
-    { t: 27.4, nombre: "Equipo de agentes", img: "equipo", texto: "Programan, prueban y revisan en paralelo; tú eliges qué integrar." },
-    { t: 31.0, nombre: "Modelo local", img: "ajustes-modelo-local", texto: "Una IA en tu PC: sin límites de uso y sin internet." },
-    { t: 34.6, nombre: "Tú pones los límites", img: "directrices", texto: "Qué no puede tocar, y en qué horario." },
-    { t: 38.2, nombre: "Con personalidad", img: "avatar", texto: "Su nombre, sus ojos y su voz, a tu gusto." },
-    { t: 41.8, nombre: "Beta abierta", img: "beta", texto: "Cuéntanos qué mejorar con un clic." },
-    { t: 45.4, nombre: "Descárgalo" },
+    {
+      "t": 0,
+      "nombre": "Brakescode"
+    },
+    {
+      "t": 4.2,
+      "nombre": "Se abre GÉNESIS"
+    },
+    {
+      "t": 15.0,
+      "nombre": "Términos y cuenta"
+    },
+    {
+      "t": 35.0,
+      "nombre": "Pídele lo que quieras",
+      "img": "ahora",
+      "texto": "Pídele lo que quieras en palabras normales: lo hace en tu PC."
+    },
+    {
+      "t": 39.6,
+      "nombre": "Transparente",
+      "img": "historial-detalle",
+      "texto": "Ves cada paso que dio y cuánto tardó."
+    },
+    {
+      "t": 44.0,
+      "nombre": "Tus servicios, conectados",
+      "img": "conectores",
+      "texto": "Gmail, Drive, Calendar, GitHub, Notion, Canva y más."
+    },
+    {
+      "t": 48.2,
+      "nombre": "Tú decides cada permiso",
+      "img": "conectores-gmail",
+      "texto": "Permitir, preguntar o bloquear cada herramienta."
+    },
+    {
+      "t": 52.4,
+      "nombre": "Más de 1000 conectores",
+      "img": "conectores-catalogo",
+      "texto": "El catálogo, la comunidad y cualquier servidor MCP de GitHub."
+    },
+    {
+      "t": 56.8,
+      "nombre": "Sabe hacer de todo",
+      "img": "skills",
+      "texto": "PDF, Excel, presentaciones, diseño y código."
+    },
+    {
+      "t": 61.2,
+      "nombre": "Hecho entre todos",
+      "img": "comunidad",
+      "texto": "Skills y conectores que comparte la comunidad."
+    },
+    {
+      "t": 65.6,
+      "nombre": "Un equipo, no un solo agente",
+      "img": "equipo",
+      "texto": "Eliges el proyecto, describes la tarea; los agentes compiten o se reparten el trabajo, cada uno con su rol, y un revisor lo comprueba."
+    },
+    {
+      "t": 79.4,
+      "nombre": "Tú pones los límites",
+      "img": "directrices",
+      "texto": "Qué no puede tocar, y en qué horario."
+    },
+    {
+      "t": 83.8,
+      "nombre": "Con personalidad",
+      "img": "avatar-completo",
+      "texto": "Chullo, lentes, bufanda: accesorios para tu asistente."
+    },
+    {
+      "t": 90.8,
+      "nombre": "Gratis, sin claves de API",
+      "img": "ajustes-proveedores",
+      "texto": "Gratis con OpenCode o con tu plan, sin claves de API."
+    },
+    {
+      "t": 95.2,
+      "nombre": "Privado y sin límites",
+      "img": "ajustes-modelo-local",
+      "texto": "Una IA que corre en tu PC: privada y sin límites."
+    },
+    {
+      "t": 99.6,
+      "nombre": "Te recuerda",
+      "img": "ajustes-memoria",
+      "texto": "Sigue el hilo aunque cambies de motor."
+    },
+    {
+      "t": 104.0,
+      "nombre": "Control total, con límites",
+      "img": "ajustes-control",
+      "texto": "Tú decides cuánto puede hacer en tu computadora."
+    },
+    {
+      "t": 108.4,
+      "nombre": "Construido contigo",
+      "img": "beta",
+      "texto": "Cuéntanos qué mejorar con un clic."
+    },
+    {
+      "t": 113.0,
+      "nombre": "Descárgalo"
+    }
   ];
   const video = document.getElementById("video");
   const nav = document.querySelector(".capitulos");
