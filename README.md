@@ -11,7 +11,11 @@
 ![Plataformas](https://img.shields.io/badge/Windows%20%C2%B7%20Linux-64%20bits-555)
 ![Licencia](https://img.shields.io/badge/licencia-propietaria-555)
 
+<div align="justify">
+
 [**Descargar la beta**](../../releases/latest) &nbsp;·&nbsp; [**Ver el recorrido interactivo**](https://systemorlando.github.io/genesis-app/) &nbsp;·&nbsp; [Video completo (MP4)](docs/genesis-beta.mp4)
+
+</div>
 
 <a href="https://systemorlando.github.io/genesis-app/"><img src="demo.gif" alt="GÉNESIS en acción: el inicio de la app y un recorrido por sus paneles" width="800" /></a>
 
@@ -24,11 +28,24 @@
 
 ## En 30 segundos
 
+<div align="justify">
+
 GÉNESIS es un agente de escritorio. No es un chat: le pides algo en palabras normales y **lo hace en tu computadora**, con los permisos que tú le das. Lo desarrolla **Brakescode**.
 
-| <img src="docs/icons/hace.svg" width="20" height="20" align="absmiddle" alt=""> **Hace** | <img src="docs/icons/brain.svg" width="20" height="20" align="absmiddle" alt=""> **Recuerda** | <img src="docs/icons/limites.svg" width="20" height="20" align="absmiddle" alt=""> **Respeta tus límites** |
-|---|---|---|
-| Abre programas, ordena archivos, escribe documentos, programa y trabaja en Gmail, Drive, Calendar, GitHub, Notion, Canva y más. | Su memoria es propia: **sigue el hilo aunque cambies de motor de IA**, de plan o de modelo, o reinicies la app. | Tú eliges qué puede tocar: rutas protegidas, apps vetadas, horario y permisos por herramienta. Cada paso queda en el historial. |
+</div>
+
+<table>
+  <tr>
+    <th width="33%" align="center"><img src="docs/icons/hace.svg" width="32" height="32" alt=""><br>Hace</th>
+    <th width="33%" align="center"><img src="docs/icons/brain.svg" width="32" height="32" alt=""><br>Recuerda</th>
+    <th width="33%" align="center"><img src="docs/icons/limites.svg" width="32" height="32" alt=""><br>Respeta tus límites</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">Abre programas, ordena archivos, escribe documentos, programa y trabaja en Gmail, Drive, Calendar, GitHub, Notion, Canva y más.</td>
+    <td align="center" valign="middle">Su memoria es propia: <b>sigue el hilo aunque cambies de motor de IA</b>, de plan o de modelo, o reinicies la app.</td>
+    <td align="center" valign="middle">Tú eliges qué puede tocar: rutas protegidas, apps vetadas, horario y permisos por herramienta. Cada paso queda en el historial.</td>
+  </tr>
+</table>
 
 **Gratis para empezar** (OpenCode, sin cuenta ni claves de API) · **con tu plan** de Claude, ChatGPT o Gemini · o **con un modelo local**, sin internet.
 
@@ -46,72 +63,53 @@ Cada orden corre en un proceso nuevo del motor (OpenCode, Claude, ChatGPT, Gemin
 
 ### Y además
 
-| | |
-|---|---|
-| <img src="docs/icons/actua.svg" width="20" height="20" align="absmiddle" alt=""> **Actúa, no solo responde** | Usa programas, archivos, teclado, ratón y tus servicios. Cada paso queda en el **Historial**: qué herramienta usó, con qué y cuánto tardó. |
-| <img src="docs/icons/motor.svg" width="20" height="20" align="absmiddle" alt=""> **El motor que quieras, sin claves de API** | OpenCode gratis; tu plan de Claude, ChatGPT o Gemini a través de la herramienta oficial de cada empresa (GÉNESIS no lee ni guarda tus credenciales); o un modelo local. Una orden se queda con un solo motor de principio a fin. |
-| <img src="docs/icons/limites.svg" width="20" height="20" align="absmiddle" alt=""> **Tú pones los límites** | Niveles de control, rutas protegidas, apps vetadas, horario y palabra clave. En cada conector, cada herramienta se permite, se pregunta o se bloquea, y el servidor de herramientas de GÉNESIS lo hace cumplir. |
-| <img src="docs/icons/equipo.svg" width="20" height="20" align="absmiddle" alt=""> **Un equipo, no un solo agente** | Varios agentes sobre tu proyecto, cada uno en su propia copia y rama: **compiten** (basta con que uno acierte) o **se reparten** la tarea. Un revisor automático comprueba el trabajo y tú decides qué integrar. |
-| <img src="docs/icons/conectores.svg" width="20" height="20" align="absmiddle" alt=""> **Más de 1000 conectores** | Un catálogo de más de 60 con un clic, los que comparte la comunidad (revisados por una persona) y cualquier servidor MCP de GitHub. Cada cuenta guarda los suyos. |
-| <img src="docs/icons/datos.svg" width="20" height="20" align="absmiddle" alt=""> **Tus datos se quedan en tu PC** | Archivos, conversaciones, memoria y claves viven en tu computadora (las claves, en el almacén del sistema). Solo sale a internet lo que le pides. |
-| <img src="docs/icons/agil.svg" width="20" height="20" align="absmiddle" alt=""> **Ágil** | Mantiene el motor encendido entre órdenes: en las mediciones del equipo, una orden con OpenCode tardó 2,7 s en engancharse frente a 5,2 s en frío. |
-| <img src="docs/icons/idioma.svg" width="20" height="20" align="absmiddle" alt=""> **En tu idioma, para laptops normales** | Español, inglés y portugués, con voz natural que corre en tu PC. Pensado para equipos como una RTX 3050 con 16 GB de RAM. |
-| <img src="docs/icons/actualiza.svg" width="20" height="20" align="absmiddle" alt=""> **Actualizaciones firmadas** | Un clic; GÉNESIS comprueba que la firmó Brakescode antes de instalar. Windows y Linux. |
-
----
-
-## Pídele lo que quieras
-
-- *«Resume los correos de hoy de mis profesores y agenda las entregas en mi calendario.»*
-- *«Arregla el error de la API de pagos y corre las pruebas.»*
-- *«Ordena mi carpeta de Descargas por tipo de archivo.»*
-- *«Haz una presentación de 6 diapositivas sobre IA en el Perú para mi curso.»*
-
----
-
-## Descargar e instalar
-
-| Sistema | Archivo en la [última versión](../../releases/latest) | Cómo |
-|---|---|---|
-| **Windows 10 u 11** (64 bits) | `GENESIS-<versión>-setup.exe` | Ábrelo; no pide administrador |
-| **Ubuntu, Debian, Mint…** | `GENESIS-<versión>-linux-amd64.deb` | `sudo apt install ./GENESIS-<versión>-linux-amd64.deb` |
-| **Cualquier Linux** | `GENESIS-<versión>-linux-x86_64.AppImage` | `chmod +x` y ábrelo; se actualiza desde la app |
-
-Baja GÉNESIS **solo desde esa página**: así sabes que es el original. Mac todavía no.
-
-<details>
-<summary><b>Windows: paso a paso</b></summary>
-
-1. Entra en **[Releases → la última versión](../../releases/latest)** y baja `GENESIS-<versión>-setup.exe`.
-2. Ábrelo. No pide permisos de administrador: se instala solo para tu usuario.
-3. **Si Windows muestra «Windows protegió tu PC»:** pasa porque el instalador todavía no tiene un certificado de firma de código de pago, no porque tenga un virus. Haz clic en **Más información → Ejecutar de todas formas**.
-4. Al abrir la app por primera vez, lee y acepta los términos, inicia sesión con Google o GitHub y sigue la guía rápida (puedes verla otra vez desde **Ajustes → Versión y guía**).
-
-</details>
-
-<details>
-<summary><b>Linux: dependencias y diferencias</b></summary>
-
-Necesita un escritorio con **WebKitGTK 4.1** (viene en Ubuntu 22.04+ y Fedora actuales; el `.deb` lo pide solo). Para que el agente maneje el escritorio instala, según lo que uses:
-
-| Para… | Instala | Nota |
-|---|---|---|
-| Teclado y ratón | `xdotool` | Solo en sesiones **X11**; en Wayland no funcionan |
-| Enfocar y listar ventanas | `wmctrl` | Solo X11 |
-| Portapapeles | `xclip` (X11) o `wl-clipboard` (Wayland) | |
-| Capturar la pantalla | `gnome-screenshot`, `scrot` o `grim` | Cualquiera de los tres |
-
-`sudo apt install xdotool wmctrl xclip gnome-screenshot` cubre lo habitual en X11. Si falta algo, GÉNESIS te dice cuál paquete instalar en vez de fallar sin explicar.
-
-**Funciona igual:** las órdenes, el historial, los conectores y su catálogo, las skills, la comunidad, el equipo de agentes, las directrices, la memoria, los motores (OpenCode, Claude, ChatGPT, Gemini), el avatar, las actualizaciones firmadas y los mensajes de mejora.
-
-**Cambia:** no existe el nivel «Administrador» (sí «Normal», «Completo» y «Control total»); la terminal es `bash` en vez de PowerShell; el modelo local corre directamente, sin WSL; y todavía no se probó en todas las distribuciones y escritorios. Si algo falla en la tuya, cuéntanos cuál usas.
-
-</details>
-
-**Qué necesitas (Windows y Linux):**
-- Un motor de IA. **OpenCode es gratis y no pide cuenta**: se instala desde Ajustes → Proveedores. Si tienes Claude, ChatGPT o Gemini, también sirven.
-- Opcional: un **modelo local** que corre en tu propia PC, sin límites de uso y sin internet (Ajustes → Modelo local). Va mejor con una tarjeta gráfica NVIDIA (por ejemplo una RTX 3050) y 16 GB de RAM o más.
+<table>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/actua.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Actúa, no solo responde</b></td>
+    <td align="justify" valign="middle">Usa programas, archivos, teclado, ratón y tus servicios. Cada paso queda en el <b>Historial</b>: qué herramienta usó, con qué y cuánto tardó.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/motor.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>El motor que quieras, sin claves de API</b></td>
+    <td align="justify" valign="middle">OpenCode gratis; tu plan de Claude, ChatGPT o Gemini a través de la herramienta oficial de cada empresa (GÉNESIS no lee ni guarda tus credenciales); o un modelo local. Una orden se queda con un solo motor de principio a fin.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/limites.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Tú pones los límites</b></td>
+    <td align="justify" valign="middle">Niveles de control, rutas protegidas, apps vetadas, horario y palabra clave. En cada conector, cada herramienta se permite, se pregunta o se bloquea, y el servidor de herramientas de GÉNESIS lo hace cumplir.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/equipo.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Un equipo, no un solo agente</b></td>
+    <td align="justify" valign="middle">Varios agentes sobre tu proyecto, cada uno en su propia copia y rama: <b>compiten</b> (basta con que uno acierte) o <b>se reparten</b> la tarea. Un revisor automático comprueba el trabajo y tú decides qué integrar.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/conectores.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Más de 1000 conectores</b></td>
+    <td align="justify" valign="middle">Un catálogo de más de 60 con un clic, los que comparte la comunidad (revisados por una persona) y cualquier servidor MCP de GitHub. Cada cuenta guarda los suyos.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/datos.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Tus datos se quedan en tu PC</b></td>
+    <td align="justify" valign="middle">Archivos, conversaciones, memoria y claves viven en tu computadora (las claves, en el almacén del sistema). Solo sale a internet lo que le pides.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/agil.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Ágil</b></td>
+    <td align="justify" valign="middle">Mantiene el motor encendido entre órdenes: en las mediciones del equipo, una orden con OpenCode tardó 2,7 s en engancharse frente a 5,2 s en frío.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/idioma.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>En tu idioma, para laptops normales</b></td>
+    <td align="justify" valign="middle">Español, inglés y portugués, con voz natural que corre en tu PC. Pensado para equipos como una RTX 3050 con 16 GB de RAM.</td>
+  </tr>
+  <tr>
+    <td width="72" align="center" valign="middle"><img src="docs/icons/actualiza.svg" width="30" height="30" alt=""></td>
+    <td width="230" valign="middle"><b>Actualizaciones firmadas</b></td>
+    <td align="justify" valign="middle">Un clic; GÉNESIS comprueba que la firmó Brakescode antes de instalar. Windows y Linux.</td>
+  </tr>
+</table>
 
 ---
 
@@ -147,7 +145,11 @@ Además: **memoria** que sigue el hilo aunque cambies de motor, **modo programac
 
 ## Cómo se compara
 
+<div align="justify">
+
 GÉNESIS no compite con todo lo que hay: hace una cosa distinta. Esta comparación es para que elijas lo que te conviene, y dice también dónde otros son mejores.
+
+</div>
 
 | | **GÉNESIS** | **OpenRouter** | **Apps de chat** (ChatGPT, Claude, Gemini) | **Agentes de código** (Claude Code, Codex CLI, Cursor) | **Ejecutores locales** (Ollama, LM Studio) |
 |---|---|---|---|---|---|
@@ -173,7 +175,13 @@ GÉNESIS no compite con todo lo que hay: hace una cosa distinta. Esta comparaci�
 
 <details>
 <summary><b>¿Es gratis?</b></summary>
+
+<div align="justify">
+
 La beta se puede descargar y usar sin costo. Con OpenCode no pagas nada más. Si usas tu plan de Claude, ChatGPT o Gemini, ese plan lo pagas a su empresa, como siempre.
+
+</div>
+
 </details>
 
 <details>
@@ -187,12 +195,24 @@ Tus archivos, conversaciones, memoria y claves se quedan en tu PC. GÉNESIS solo
 
 <details>
 <summary><b>¿Qué pasa si cambio de motor a mitad de una tarea?</b></summary>
+
+<div align="justify">
+
 Una orden usa un solo motor de principio a fin. El cambio vale para la siguiente orden, y la memoria sigue igual.
+
+</div>
+
 </details>
 
 <details>
 <summary><b>¿Funciona sin internet?</b></summary>
+
+<div align="justify">
+
 Con un modelo local sí. Los conectores (Gmail, Drive…) y las actualizaciones necesitan internet.
+
+</div>
+
 </details>
 
 <details>
@@ -243,6 +263,10 @@ GÉNESIS es software propietario: se licencia, no se vende. Puedes instalarlo y 
 
 </div>
 
+<div align="justify">
+
 Este repositorio solo publica los instaladores: el código fuente de GÉNESIS no es público.
+
+</div>
 
 © 2026 SystemOrlando · Brakescode. Todos los derechos reservados.
