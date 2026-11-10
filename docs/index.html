@@ -26,7 +26,7 @@
   .pildora { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; border: 1px solid var(--borde); border-radius: 999px; padding: 5px 11px; color: var(--tinta-2); }
   .heroe { text-align: center; padding: 44px 0 32px; }
   .titulo { font-size: clamp(44px, 9vw, 96px); font-weight: 800; letter-spacing: 0.16em; text-indent: 0.16em; line-height: 1; }
-  .lema { margin-top: 18px; font-size: clamp(18px, 2.6vw, 24px); color: var(--tinta-2); }
+  .lema { margin-top: 18px; font-size: clamp(18px, 2.6vw, 24px); color: var(--tinta-2); text-align: justify; text-align-last: center; }
   .acciones { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .boton { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 999px; font-weight: 800; font-size: 16px; text-decoration: none; border: 1px solid var(--borde); transition: transform 160ms ease, background-color 160ms ease; }
   .boton:hover { transform: translateY(-1px); }
@@ -46,17 +46,21 @@
   .capitulo[aria-current="true"] { background: var(--fila); color: var(--tinta); }
   .capitulo time { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--tinta-3); min-width: 34px; }
   .capitulo[aria-current="true"] time { color: var(--acento); }
-  section.porque { padding: 64px 0 8px; }
-  .porque-lista { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-  .porque-lista article { background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; padding: 20px 20px 22px; }
+  section.porque { padding: 112px 0 16px; }
+  .porque-lista { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .porque-lista article { background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; padding: 26px 24px 28px; }
   .porque-lista article.estrella { border-color: color-mix(in oklab, var(--acento) 55%, transparent); background: color-mix(in oklab, var(--acento) 9%, var(--panel)); }
   .porque-lista h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
-  .porque-lista p { margin-top: 8px; color: var(--tinta-2); font-size: 15px; line-height: 1.5; }
-  .vs { margin-top: 28px; background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; padding: 20px 22px; }
+  .porque-lista p { margin-top: 12px; color: var(--tinta-2); font-size: 15px; line-height: 1.5; }
+  .vs { margin-top: 36px; background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; padding: 28px 28px 30px; }
   .vs h3 { font-size: 18px; font-weight: 800; }
   .vs p { margin-top: 8px; color: var(--tinta-2); font-size: 15px; line-height: 1.55; }
   .vs p b { color: var(--tinta); }
-  section.paneles { padding: 64px 0 24px; }
+  .porque-lista p, .vs p, .seccion-texto { text-align: justify; text-justify: inter-word; }
+  .porque-lista p { hyphens: auto; -webkit-hyphens: auto; }
+  .vs p, .seccion-texto { hyphens: manual; text-wrap: pretty; }
+  .nh { hyphens: none; white-space: nowrap; }
+  section.paneles { padding: 112px 0 40px; }
   .seccion-titulo { font-size: clamp(26px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; }
   .seccion-texto { margin-top: 8px; color: var(--tinta-2); font-size: 17px; }
   .galeria { margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
@@ -99,18 +103,18 @@
     <h2 class="seccion-titulo">Por qué GÉNESIS</h2>
     <p class="seccion-texto">Un agente que hace el trabajo en tu computadora, recuerda lo que hablaron aunque cambies de motor de IA, se puede usar gratis y te deja poner los límites.</p>
     <div class="porque-lista">
-      <article class="estrella"><h3>Memoria que no se pierde al cambiar de motor</h3><p>Cada orden corre en un proceso nuevo del motor, que no recuerda nada. La memoria vive en GÉNESIS y se la pone delante a cada orden: cambias de OpenCode a Claude o a un modelo local, o reinicias la app, y el hilo sigue.</p></article>
+      <article class="estrella"><h3>Memoria que no se pierde al cambiar de motor</h3><p>Cada orden corre en un proceso nuevo del motor, que no recuerda nada. La memoria vive en <span class="nh">GÉNESIS</span> y se la pone delante a cada orden: cambias de OpenCode a Claude o a un modelo local, o reinicias la app, y el hilo sigue.</p></article>
       <article><h3>Actúa, no solo responde</h3><p>Abre programas, ordena archivos, escribe documentos, programa y usa tus servicios. Cada paso queda en el Historial.</p></article>
       <article><h3>Gratis para empezar, sin claves de API</h3><p>OpenCode es gratuito y no pide cuenta. Si ya pagas Claude, ChatGPT o Gemini, usa tu plan con la herramienta oficial de cada uno. O un modelo local, sin internet.</p></article>
       <article><h3>Tú pones los límites</h3><p>Niveles de control, rutas protegidas, apps vetadas, horario y palabra clave. Cada herramienta de cada conector se permite, se pregunta o se bloquea.</p></article>
       <article><h3>Un equipo, no un solo agente</h3><p>Varios agentes sobre tu proyecto, cada uno en su propia copia: compiten o se reparten la tarea, y un revisor comprueba el trabajo antes de que integres.</p></article>
       <article><h3>Más de 1000 conectores</h3><p>Un catálogo de más de 60 con un clic, los de la comunidad y cualquier servidor MCP de GitHub.</p></article>
       <article><h3>Tus datos se quedan en tu PC</h3><p>Archivos, conversaciones, memoria y claves viven en tu computadora. Solo sale a internet lo que le pides.</p></article>
-      <article><h3>Windows y Linux, con actualizaciones firmadas</h3><p>Un clic y se actualiza, y GÉNESIS comprueba que la firmó Brakescode antes de instalar. En español, inglés y portugués.</p></article>
+      <article><h3>Windows y Linux, con actualizaciones firmadas</h3><p>Un clic y se actualiza, y <span class="nh">GÉNESIS</span> comprueba que la firmó Brakescode antes de instalar. En español, inglés y portugués.</p></article>
     </div>
     <div class="vs">
       <h3>¿Y OpenRouter?</h3>
-      <p>OpenRouter es una puerta de entrada (API) a cientos de modelos con una sola clave, y es excelente si programas y quieres elegir modelos desde tu código. Pero no hace nada en tu computadora y su API no guarda lo que hablaron. <b>GÉNESIS es el agente</b> que usa un modelo para hacer tareas y <b>recuerda entre órdenes aunque cambies de motor</b>. Son capas distintas: el modelo y el agente.
+      <p>OpenRouter es una puerta de entrada (API) a cientos de modelos con una sola clave, y es excelente si programas y quieres elegir modelos desde tu código. Pero no hace nada en tu computadora y su API no guarda lo que hablaron. <b><span class="nh">GÉNESIS</span> es el agente</b> que usa un modelo para hacer tareas y <b>recuerda entre órdenes aunque cambies de motor</b>. Son capas distintas: el modelo y el agente.
       <a href="https://github.com/SystemOrlando/genesis-app#en-qué-se-parece-y-en-qué-se-diferencia">Ver la comparación completa</a>.</p>
     </div>
   </section>
