@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Política de privacidad · GÉNESIS</title>
+<style>
+  :root { --suelo: #0b0b0e; --tinta: #edeae4; --tinta-2: #b9b3aa; --acento: #8e9bff; --borde: rgba(237, 234, 228, 0.12); }
+  @media (prefers-color-scheme: light) { :root { --suelo: #f4f2ed; --tinta: #16171a; --tinta-2: #4b4a47; --acento: #4f5de0; --borde: rgba(22, 23, 26, 0.14); } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--suelo); color: var(--tinta); font: 17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+  h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 6px; }
+  h2 { font-size: 21px; margin: 40px 0 8px; }
+  p, li { color: var(--tinta-2); text-align: justify; hyphens: manual; }
+  li { margin: 6px 0; }
+  a { color: var(--acento); }
+  .fecha { color: var(--tinta-2); font-size: 15px; }
+  .nota { border: 1px solid var(--borde); border-radius: 14px; padding: 16px 18px; margin: 28px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Política de privacidad de GÉNESIS</h1>
+  <p class="fecha">Última actualización: 11 de noviembre de 2026 · Brakescode · <a href="mailto:contacto@brakescode.com">contacto@brakescode.com</a></p>
+
+  <p>GÉNESIS es un agente de escritorio que ejecuta lo que le pides en tu computadora. Esta política explica qué datos usa, dónde se guardan y con quién se comparten. En una frase: <b>tus archivos, conversaciones, memoria y claves se quedan en tu PC</b>, y GÉNESIS solo manda a internet lo que tú le pides.</p>
+
+  <h2>Qué datos usa GÉNESIS</h2>
+  <ul>
+    <li><b>Tu cuenta.</b> Si inicias sesión con Google o GitHub, GÉNESIS recibe tu correo, tu nombre y tu foto de perfil para mostrarlos en la app y separar los conectores de cada cuenta. Se guardan en tu computadora.</li>
+    <li><b>Tus órdenes y lo que el agente ve para cumplirlas</b> (archivos, texto de la pantalla, resultados de comandos). Se guardan en tu computadora, en el historial y la memoria de la app.</li>
+    <li><b>Tus credenciales.</b> Las claves y tokens se guardan en el almacén de claves de tu sistema operativo (en Windows, el Administrador de credenciales). GÉNESIS no lee ni guarda las credenciales de tus planes de Claude, ChatGPT o Gemini: las maneja la herramienta oficial de cada empresa.</li>
+    <li><b>Mensajes de mejora.</b> Si nos escribes desde el botón BETA, enviamos lo que escribes y, solo si marcas la casilla, la versión de la app, el sistema operativo y el motor que usas. Nunca tus archivos, conversaciones ni claves.</li>
+  </ul>
+
+  <h2>Datos de las API de Google (Gmail, Drive, Calendar)</h2>
+  <p>Si conectas tu cuenta de Google en <i>Conectores</i>, GÉNESIS accede a Gmail, Drive o Calendar <b>solo para cumplir las órdenes que tú le das</b> (por ejemplo, resumir tus correos o agendar un evento). Los permisos que se piden son los mínimos para cada servicio, y puedes quitarlos en cualquier momento desde <i>Conectores</i> o desde <a href="https://myaccount.google.com/permissions">tu cuenta de Google</a>.</p>
+  <p>Brakescode no recibe, no guarda en sus servidores y no ve esa información. Los datos que GÉNESIS lee de Google se usan en tu computadora y, para responderte, se envían al motor de inteligencia artificial que tú elegiste (por ejemplo OpenCode, Claude, ChatGPT, Gemini o un modelo local), que los trata según sus propios términos. No se venden, no se usan para publicidad y no se usan para entrenar modelos de inteligencia artificial.</p>
+  <div class="nota">
+    <p><b>Declaración de uso limitado.</b> El uso y la transferencia a cualquier otra aplicación de la información recibida de las API de Google se ajustarán a la <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Política de datos de usuario de los Servicios de API de Google</a>, incluidos los requisitos de uso limitado.</p>
+  </div>
+
+  <h2>Con quién se comparte</h2>
+  <ul>
+    <li>Con el <b>motor de IA</b> que elijas, lo necesario para tu orden.</li>
+    <li>Con los <b>servicios que conectes</b> (Google, GitHub, Notion…), para hacer lo que pides.</li>
+    <li>Con <b>GitHub</b>, para buscar actualizaciones y el catálogo de conectores (sin datos personales).</li>
+    <li>Con un <b>servicio de formularios</b>, solo si envías un mensaje de mejora.</li>
+  </ul>
+  <p>No vendemos tus datos ni los compartimos con anunciantes.</p>
+
+  <h2>Cuánto tiempo se guardan</h2>
+  <p>Mientras uses la app y no los borres. Puedes borrar la memoria y el historial desde Ajustes, cerrar sesión, quitar cada conector y desinstalar GÉNESIS, que elimina sus datos locales. Los mensajes de mejora que enviaste los conservamos para atenderlos; si quieres que borremos uno, escríbenos.</p>
+
+  <h2>Tus derechos</h2>
+  <p>Puedes pedir acceso, corrección o eliminación de los datos que tengamos sobre ti (por ahora, solo los mensajes de mejora que enviaste) escribiendo a <a href="mailto:contacto@brakescode.com">contacto@brakescode.com</a>.</p>
+
+  <h2>Cambios</h2>
+  <p>Si esta política cambia de forma importante, lo avisaremos en la app y actualizaremos la fecha de arriba.</p>
+
+  <p class="fecha">© 2026 SystemOrlando · Brakescode. GÉNESIS es software propietario; ver la <a href="https://github.com/SystemOrlando/genesis-app/blob/main/LICENSE">licencia</a>.</p>
+</main>
+</body>
+</html>

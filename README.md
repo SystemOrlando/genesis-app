@@ -113,6 +113,74 @@ Cada orden corre en un proceso nuevo del motor (OpenCode, Claude, ChatGPT, Gemin
 
 ---
 
+## Pídele lo que quieras
+
+- *«Resume los correos de hoy de mis profesores y agenda las entregas en mi calendario.»*
+- *«Arregla el error de la API de pagos y corre las pruebas.»*
+- *«Ordena mi carpeta de Descargas por tipo de archivo.»*
+- *«Haz una presentación de 6 diapositivas sobre IA en el Perú para mi curso.»*
+
+---
+
+## Descargar e instalar
+
+| Sistema | Archivo en la [última versión](../../releases/latest) | Cómo |
+|---|---|---|
+| **Windows 10 u 11** (64 bits) | `GENESIS-<versión>-setup.exe` | Ábrelo; no pide administrador |
+| **Ubuntu, Debian, Mint…** | `GENESIS-<versión>-linux-amd64.deb` | `sudo apt install ./GENESIS-<versión>-linux-amd64.deb` |
+| **Cualquier Linux** | `GENESIS-<versión>-linux-x86_64.AppImage` | `chmod +x` y ábrelo; se actualiza desde la app |
+
+<div align="justify">
+
+Baja GÉNESIS **solo desde esa página**: así sabes que es el original. Mac todavía no.
+
+</div>
+
+<details>
+<summary><b>Windows: paso a paso</b></summary>
+
+1. Entra en **[Releases → la última versión](../../releases/latest)** y baja `GENESIS-<versión>-setup.exe`.
+2. Ábrelo. No pide permisos de administrador: se instala solo para tu usuario.
+3. **Si Windows muestra «Windows protegió tu PC»:** pasa porque el instalador todavía no tiene un certificado de firma de código de pago, no porque tenga un virus. Haz clic en **Más información → Ejecutar de todas formas**.
+4. Al abrir la app por primera vez, lee y acepta los términos, inicia sesión con Google o GitHub y sigue la guía rápida (puedes verla otra vez desde **Ajustes → Versión y guía**).
+
+</details>
+
+<details>
+<summary><b>Linux: dependencias y diferencias</b></summary>
+
+<div align="justify">
+
+Necesita un escritorio con **WebKitGTK 4.1** (viene en Ubuntu 22.04+ y Fedora actuales; el `.deb` lo pide solo). Para que el agente maneje el escritorio instala, según lo que uses:
+
+</div>
+
+| Para… | Instala | Nota |
+|---|---|---|
+| Teclado y ratón | `xdotool` | Solo en sesiones **X11**; en Wayland no funcionan |
+| Enfocar y listar ventanas | `wmctrl` | Solo X11 |
+| Portapapeles | `xclip` (X11) o `wl-clipboard` (Wayland) | |
+| Capturar la pantalla | `gnome-screenshot`, `scrot` o `grim` | Cualquiera de los tres |
+
+<div align="justify">
+
+`sudo apt install xdotool wmctrl xclip gnome-screenshot` cubre lo habitual en X11. Si falta algo, GÉNESIS te dice cuál paquete instalar en vez de fallar sin explicar.
+
+</div>
+
+**Funciona igual:** las órdenes, el historial, los conectores y su catálogo, las skills, la comunidad, el equipo de agentes, las directrices, la memoria, los motores (OpenCode, Claude, ChatGPT, Gemini), el avatar, las actualizaciones firmadas y los mensajes de mejora.
+
+**Cambia:** no existe el nivel «Administrador» (sí «Normal», «Completo» y «Control total»); la terminal es `bash` en vez de PowerShell; el modelo local corre directamente, sin WSL; y todavía no se probó en todas las distribuciones y escritorios. Si algo falla en la tuya, cuéntanos cuál usas.
+
+</details>
+
+**Qué necesitas (Windows y Linux):**
+- **Node.js y uv.** Al instalar o actualizar GÉNESIS, la primera vez que carga revisa si faltan y, si es así, los instala solo (y si no pudo, te deja un botón «Instalar ahora»): los baja de las páginas oficiales, comprueba su suma de seguridad y los deja en su propia carpeta, sin pedir administrador. Hacen falta para instalar los proveedores (Node.js) y para la voz natural y los conectores de código abierto (uv). También instala Git, que usa el Equipo de agentes (en Windows, sin administrador; en Linux, con la ventana de contraseña del sistema).
+- Un motor de IA. **OpenCode es gratis y no pide cuenta**: se instala desde Ajustes → Proveedores. Si tienes Claude, ChatGPT o Gemini, también sirven.
+- Opcional: un **modelo local** que corre en tu propia PC, sin límites de uso y sin internet (Ajustes → Modelo local). Va mejor con una tarjeta gráfica NVIDIA (por ejemplo una RTX 3050) y 16 GB de RAM o más.
+
+---
+
 ## Qué hay dentro
 
 <details open>
