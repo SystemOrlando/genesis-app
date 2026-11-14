@@ -61,6 +61,20 @@ Cada orden corre en un proceso nuevo del motor (OpenCode, Claude, ChatGPT, Gemin
 
 </div>
 
+### Gasta menos tokens con el formato .gqz
+
+<div align="justify">
+
+Lo que le mandas a una IA se cobra por «tokens», y el español gasta más que el inglés. GÉNESIS lo resuelve en tu PC, sin gastar tokens: **toda orden pasa por un compilador** que la traduce al inglés con un traductor que corre en tu computadora, quita el relleno y, si tiene estructura (una tabla, una lista, reglas, un documento), la escribe en **.gqz**, un formato propio y muy compacto. Se manda la forma que menos gasta, contando todo; un saludo va tal cual porque no hay nada que ahorrar. La respuesta llega en tu idioma (español, inglés o portugués), con las tablas y los estados («Pagado», «Pendiente», «Error») bien presentados.
+
+</div>
+
+- **Documentos a .gqz:** PDF, Word, PowerPoint, Excel, CSV, HTML, e imágenes y PDF escaneados con OCR. Se marca con la casilla «Adjuntos a .gqz» junto al chat.
+- **La memoria también va en .gqz:** más detalle del hilo por menos tokens.
+- **Traductor local:** el motor de Firefox Translations con los modelos de Mozilla, en tu PC, sin internet ni cuentas. Las rutas, los correos, los enlaces y los nombres propios no se traducen.
+- **Cifras medidas, no prometidas** (con el tokenizador cl100k): en 4 documentos de prueba, el .gqz gasta un **40 %** menos que el mismo Markdown en español; en una batería de 20 órdenes reales (con jerga y spanglish), **32 %** menos; y las respuestas en inglés, un **26 %** menos que en español. El traductor local es un modelo pequeño y a veces se equivoca en frases con el verbo al final; cuando una frase no se puede traducir bien, va en tu idioma.
+- **Lo guardas y lo abres:** Ajustes → Formato .gqz abre, guarda y exporta archivos `.gqz`, y los convierte a Markdown o a una página HTML.
+
 ### Y además
 
 <table>
@@ -198,12 +212,12 @@ Necesita un escritorio con **WebKitGTK 4.1** (viene en Ubuntu 22.04+ y Fedora ac
 | **Equipo** | Varios agentes en paralelo sobre un proyecto, con revisión | Tareas grandes más rápido y con menos errores |
 | **Directrices** | Qué no puede tocar y cuándo: rutas, apps, horario, palabra clave | Seguridad sobre un asistente que controla tu PC |
 | **Avatar** | Nombre, ojos, voz natural y accesorios (chullo, lentes, bufanda…) | Un asistente con personalidad |
-| **Ajustes** | Motor (OpenCode gratis o tu plan), modelo local, memoria, modo programación, voz e idioma | Que se adapte a tu equipo y a tu bolsillo |
+| **Ajustes** | Motor (OpenCode gratis o tu plan), modelo local, formato .gqz y traductor local, memoria, modo programación, voz e idioma, y **Comprobar todo**: prueba tus conexiones y te dice qué hacer | Que se adapte a tu equipo y a tu bolsillo, y que sepas qué falla |
 | **Mensajes de mejora** | Botón BETA: ideas y errores llegan directo al equipo | Que la beta se construya contigo |
 
 <div align="justify">
 
-Además: **memoria** que sigue el hilo aunque cambies de motor, **modo programación** con método de ingeniería (explorar, cambiar, probar, verificar), **adjuntos** (archivos e imágenes en la orden) y **actualizaciones firmadas** con un clic.
+Además: **formato .gqz** (menos tokens, con documentos y OCR), **memoria** que sigue el hilo aunque cambies de motor, **modo programación** con método de ingeniería (explorar, cambiar, probar, verificar), **adjuntos** (archivos e imágenes en la orden) y **actualizaciones firmadas** con un clic.
 
 </div>
 
@@ -316,6 +330,21 @@ Usa el botón **BETA** de la barra superior, o **Ajustes → Mensajes de mejora*
 </div>
 
 ¿Prefieres el correo? Escribe a **contacto@brakescode.com**.
+
+## Hecho con
+
+![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?logo=tauri&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-núcleo-000000?logo=rust&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-avatar_3D-000000?logo=threedotjs&logoColor=white)
+![WebAssembly](https://img.shields.io/badge/WebAssembly-OCR_y_traductor-654FF0?logo=webassembly&logoColor=white)
+
+El núcleo (archivos, red, memoria, seguridad, lectura de documentos) es **Rust**; la interfaz, **React y TypeScript** dentro de **Tauri**, que mantiene la app liviana. El OCR y el traductor local corren en **WebAssembly**, en tu PC.
+
+---
 
 ## Tu privacidad
 

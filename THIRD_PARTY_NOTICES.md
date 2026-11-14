@@ -21,12 +21,28 @@ qué funciona GÉNESIS; no hay vínculo ni respaldo de esas empresas.
 - **Skills de base** (`genesis-desktop/src-tauri/skills-base/`): instrucciones de terceros bajo Apache-2.0 u otras licencias
   de código abierto; cada una conserva su `LICENSE.txt`, y el detalle está en
   [`AVISOS-DE-LICENCIA.md`](genesis-desktop/src-tauri/skills-base/AVISOS-DE-LICENCIA.md).
+- **Navegador del agente**: Playwright MCP 0.0.84 y Playwright 1.65.0-alpha-2026-10-30 (Microsoft, Apache-2.0), incluidos
+  **sin modificar** dentro del programa ([`genesis-desktop/src-tauri/navegador/`](genesis-desktop/src-tauri/navegador/LEEME.md)).
+  Sus `LICENSE`, `NOTICE` y `ThirdPartyNotices.txt` viajan con ellos y se descomprimen en la PC junto al código. Usan el
+  navegador que ya hay en el equipo (Microsoft Edge, Google Chrome o Chromium), que no se incluye.
+- **Caja del modo código**: QuickJS-ng (MIT; Fabrice Bellard, Charlie Gordon y los colaboradores de QuickJS-ng), compilado
+  dentro del programa por el paquete `rquickjs` (MIT, en la lista de Rust de abajo). Corre el código que el agente escribe para
+  los conectores, sin red ni acceso a archivos.
+- **OCR y traductor local** ([`genesis-desktop/public/motores/`](genesis-desktop/public/motores/LEEME.md)), incluidos **sin
+  modificar** con sus licencias en `public/motores/licencias/`: tesseract.js 7.0.0 y tesseract.js-core 7.0.0 (Tesseract en
+  WebAssembly, Apache-2.0), los modelos tessdata_fast de inglés, español y portugués (Apache-2.0), pdf.js 6.4.299 (Mozilla,
+  Apache-2.0) y bergamot-translator 0.4.9 (el motor de Firefox Translations, MPL-2.0; su código fuente está en
+  github.com/browsermt/bergamot-translator). Los modelos de traducción de Mozilla (MPL-2.0) no van en el instalador: la app
+  los baja cuando el operador lo pide.
+- **Diccionario de inglés** (`public/motores/diccionario/en.txt`): palabras de los niveles 10 a 70 de SCOWL (Copyright
+  2000-2016 Kevin Atkinson y otros; licencia permisiva, en `public/motores/licencias/SCOWL-Copyright.txt`). Sirve para
+  detectar palabras que el traductor local inventa.
 - **Tipografías**: Rethink Sans y Azeret Mono (SIL Open Font License 1.1), por los paquetes `@fontsource-variable/*` de abajo.
 - **Iconos y logotipos**: Phosphor y Lobe Icons (MIT), Simple Icons (CC0-1.0) y los logos de los paquetes `@iconify-json/*`.
   Los logotipos de servicios son marcas de sus dueños y aparecen solo para identificar el conector.
 
 ## JavaScript (dentro de la interfaz)
-MIT: 6, OFL-1.1: 2, MIT OR Apache-2.0: 2, CC0-1.0: 1, Apache-2.0 OR MIT: 1
+MIT: 6, MIT OR Apache-2.0: 4, OFL-1.1: 2, CC0-1.0: 1, Apache-2.0 OR MIT: 1
 
 | Paquete | Versión | Licencia |
 |---|---|---|
@@ -36,6 +52,8 @@ MIT: 6, OFL-1.1: 2, MIT OR Apache-2.0: 2, CC0-1.0: 1, Apache-2.0 OR MIT: 1
 | @iconify/types | 2.0.0 | MIT |
 | @lobehub/icons-static-svg | 1.101.0 | MIT |
 | @tauri-apps/api | 2.12.4 | Apache-2.0 OR MIT |
+| @tauri-apps/plugin-dialog | 2.8.4 | MIT OR Apache-2.0 |
+| @tauri-apps/plugin-fs | 2.7.1 | MIT OR Apache-2.0 |
 | @tauri-apps/plugin-global-shortcut | 2.4.1 | MIT OR Apache-2.0 |
 | @tauri-apps/plugin-opener | 2.7.2 | MIT OR Apache-2.0 |
 | react | 19.3.1 | MIT |
@@ -44,14 +62,17 @@ MIT: 6, OFL-1.1: 2, MIT OR Apache-2.0: 2, CC0-1.0: 1, Apache-2.0 OR MIT: 1
 | three | 0.170.0 | MIT |
 
 ## Rust (dentro del programa, Windows y Linux)
-MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlicense OR MIT: 8, MIT/Apache-2.0: 7, MPL-2.0: 5, MIT OR Apache-2.0 OR Zlib: 4
+MIT OR Apache-2.0: 210, MIT: 120, Apache-2.0 OR MIT: 52, Unicode-3.0: 18, MIT/Apache-2.0: 10, Unlicense OR MIT: 8, MPL-2.0: 5, MIT OR Apache-2.0 OR Zlib: 4
 
 | Paquete | Versión | Licencia |
 |---|---|---|
 | adler2 | 2.0.1 | 0BSD OR MIT OR Apache-2.0 |
+| adobe-cmap-parser | 0.4.1 | MIT |
+| aes | 0.8.4 | MIT OR Apache-2.0 |
 | aho-corasick | 1.1.5 | Unlicense OR MIT |
 | alloc-no-stdlib | 3.0.0 | BSD-3-Clause |
 | alloc-stdlib | 0.3.0 | BSD-3-Clause |
+| allocator-api2 | 0.2.21 | MIT OR Apache-2.0 |
 | anyhow | 1.0.104 | MIT OR Apache-2.0 |
 | async-broadcast | 0.7.2 | MIT OR Apache-2.0 |
 | async-channel | 2.5.0 | Apache-2.0 OR MIT |
@@ -67,17 +88,19 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | atk-sys | 0.18.2 | MIT |
 | atomic-waker | 1.1.2 | Apache-2.0 OR MIT |
 | autocfg | 1.5.1 | Apache-2.0 OR MIT |
-| base64 | 0.23.1 | MIT OR Apache-2.0 |
 | base64 | 0.22.1 | MIT OR Apache-2.0 |
+| base64 | 0.23.1 | MIT OR Apache-2.0 |
 | bit-set | 0.8.0 | Apache-2.0 OR MIT |
 | bit-vec | 0.8.0 | Apache-2.0 OR MIT |
 | bitflags | 2.13.2 | MIT OR Apache-2.0 |
 | bitflags | 1.3.2 | MIT/Apache-2.0 |
 | block-buffer | 0.10.4 | MIT OR Apache-2.0 |
+| block-padding | 0.3.3 | MIT OR Apache-2.0 |
 | blocking | 1.7.0 | Apache-2.0 OR MIT |
 | brotli | 9.1.1 | BSD-3-Clause AND MIT |
 | brotli-decompressor | 6.2.0 | BSD-3-Clause/MIT |
 | bs58 | 0.5.1 | MIT/Apache-2.0 |
+| bumpalo | 3.20.3 | MIT OR Apache-2.0 |
 | byteorder | 1.5.0 | Unlicense OR MIT |
 | bytes | 1.12.1 | MIT |
 | cairo-rs | 0.18.5 | MIT |
@@ -86,16 +109,20 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | cargo-platform | 0.1.9 | MIT OR Apache-2.0 |
 | cargo_metadata | 0.19.2 | MIT |
 | cargo_toml | 1.0.1 | Apache-2.0 OR MIT |
+| cbc | 0.1.2 | MIT OR Apache-2.0 |
 | cc | 1.10.0 | MIT OR Apache-2.0 |
 | cfb | 0.14.0 | MIT |
+| cff-parser | 0.2.0 | MIT OR Apache-2.0 |
 | cfg-expr | 0.15.8 | MIT OR Apache-2.0 |
 | cfg-if | 1.0.5 | MIT OR Apache-2.0 |
 | cfg_aliases | 0.2.2 | MIT |
 | chacha20 | 0.10.2 | MIT OR Apache-2.0 |
 | chrono | 0.4.45 | MIT OR Apache-2.0 |
+| cipher | 0.4.4 | MIT OR Apache-2.0 |
 | concurrent-queue | 2.5.0 | Apache-2.0 OR MIT |
 | constant_time_eq | 0.6.1 | CC0-1.0 OR MIT-0 OR Apache-2.0 |
 | cookie | 0.18.2 | MIT OR Apache-2.0 |
+| core_detect | 1.0.0 | MIT/Apache-2.0 |
 | cpufeatures | 0.3.1 | MIT OR Apache-2.0 |
 | cpufeatures | 0.2.17 | MIT OR Apache-2.0 |
 | crc32fast | 1.5.3 | MIT OR Apache-2.0 |
@@ -129,13 +156,16 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | dtoa-short | 0.3.5 | MPL-2.0 |
 | dunce | 1.0.5 | CC0-1.0 OR MIT-0 OR Apache-2.0 |
 | dyn-clone | 1.0.20 | MIT OR Apache-2.0 |
+| ecb | 0.1.2 | MIT |
 | embed-resource | 3.0.12 | MIT |
+| encoding_rs | 0.8.44 | (Apache-2.0 OR MIT) AND BSD-3-Clause |
 | endi | 1.1.1 | MIT |
 | enumflags2 | 0.7.12 | MIT OR Apache-2.0 |
 | enumflags2_derive | 0.7.12 | MIT OR Apache-2.0 |
 | equivalent | 1.0.3 | Apache-2.0 OR MIT |
 | erased-serde | 0.4.11 | MIT OR Apache-2.0 |
 | errno | 0.3.14 | MIT OR Apache-2.0 |
+| euclid | 0.20.14 | MIT / Apache-2.0 |
 | event-listener | 5.4.2 | Apache-2.0 OR MIT |
 | event-listener-strategy | 0.5.4 | Apache-2.0 OR MIT |
 | fastrand | 2.5.0 | Apache-2.0 OR MIT |
@@ -180,8 +210,8 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | gtk-sys | 0.18.2 | MIT |
 | gtk3-macros | 0.18.2 | MIT |
 | h2 | 0.4.20 | MIT |
-| hashbrown | 0.12.3 | MIT OR Apache-2.0 |
 | hashbrown | 0.17.1 | MIT OR Apache-2.0 |
+| hashbrown | 0.12.3 | MIT OR Apache-2.0 |
 | heck | 0.5.0 | MIT OR Apache-2.0 |
 | heck | 0.4.1 | MIT OR Apache-2.0 |
 | hex | 0.4.3 | MIT OR Apache-2.0 |
@@ -205,9 +235,10 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | ident_case | 1.0.1 | MIT/Apache-2.0 |
 | idna | 1.1.0 | MIT OR Apache-2.0 |
 | idna_adapter | 1.2.2 | Apache-2.0 OR MIT |
-| indexmap | 2.14.2 | Apache-2.0 OR MIT |
 | indexmap | 1.9.3 | Apache-2.0 OR MIT |
+| indexmap | 2.14.2 | Apache-2.0 OR MIT |
 | infer | 0.22.0 | MIT |
+| inout | 0.1.4 | MIT OR Apache-2.0 |
 | ipnet | 2.12.2 | MIT OR Apache-2.0 |
 | is-docker | 0.2.0 | MIT |
 | is-wsl | 0.4.0 | MIT |
@@ -232,17 +263,21 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | litemap | 0.8.3 | Unicode-3.0 |
 | lock_api | 0.4.14 | MIT OR Apache-2.0 |
 | log | 0.4.35 | MIT OR Apache-2.0 |
+| lopdf | 0.42.0 | MIT |
 | lru-slab | 0.1.3 | MIT OR Apache-2.0 OR Zlib |
 | markup5ever | 0.39.0 | MIT OR Apache-2.0 |
+| md-5 | 0.10.6 | MIT OR Apache-2.0 |
 | memchr | 2.8.3 | Unlicense OR MIT |
 | memoffset | 0.9.1 | MIT |
 | mime | 0.3.17 | MIT OR Apache-2.0 |
 | minisign-verify | 0.3.0 | MIT |
-| miniz_oxide | 0.8.9 | MIT OR Zlib OR Apache-2.0 |
 | miniz_oxide | 0.9.1 | MIT OR Zlib OR Apache-2.0 |
+| miniz_oxide | 0.8.9 | MIT OR Zlib OR Apache-2.0 |
 | mio | 1.2.4 | MIT |
 | muda | 0.20.0 | Apache-2.0 OR MIT |
+| multiversion_no_op | 1.0.0 | Apache-2.0 OR MIT |
 | new_debug_unreachable | 1.0.6 | MIT |
+| nom | 8.0.0 | MIT |
 | num-conv | 0.2.2 | MIT OR Apache-2.0 |
 | num-traits | 0.2.19 | MIT OR Apache-2.0 |
 | once_cell | 1.21.4 | MIT OR Apache-2.0 |
@@ -255,6 +290,7 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | parking | 2.2.1 | Apache-2.0 OR MIT |
 | parking_lot | 0.12.5 | MIT OR Apache-2.0 |
 | parking_lot_core | 0.9.12 | MIT OR Apache-2.0 |
+| pdf-extract | 0.12.1 | MIT |
 | percent-encoding | 2.3.2 | MIT OR Apache-2.0 |
 | phf | 0.13.1 | MIT |
 | phf_codegen | 0.13.1 | MIT |
@@ -267,13 +303,15 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | plist | 1.10.3 | MIT |
 | png | 0.18.1 | MIT OR Apache-2.0 |
 | polling | 3.11.0 | Apache-2.0 OR MIT |
+| pom | 1.1.0 | MIT |
+| postscript | 0.14.1 | Apache-2.0/MIT |
 | potential_utf | 0.1.6 | Unicode-3.0 |
 | powerfmt | 0.2.1 | MIT OR Apache-2.0 |
 | ppv-lite86 | 0.2.21 | MIT OR Apache-2.0 |
 | precomputed-hash | 0.1.1 | MIT |
-| proc-macro-crate | 1.3.1 | MIT OR Apache-2.0 |
 | proc-macro-crate | 2.0.2 | MIT OR Apache-2.0 |
 | proc-macro-crate | 3.5.0 | MIT OR Apache-2.0 |
+| proc-macro-crate | 1.3.1 | MIT OR Apache-2.0 |
 | proc-macro-error | 1.0.4 | MIT OR Apache-2.0 |
 | proc-macro-error-attr | 1.0.4 | MIT OR Apache-2.0 |
 | proc-macro2 | 1.0.107 | MIT OR Apache-2.0 |
@@ -288,15 +326,21 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | rand_core | 0.10.1 | MIT OR Apache-2.0 |
 | rand_core | 0.6.4 | MIT OR Apache-2.0 |
 | rand_pcg | 0.10.2 | MIT OR Apache-2.0 |
+| rangemap | 1.8.0 | MIT/Apache-2.0 |
 | raw-window-handle | 0.6.2 | MIT OR Apache-2.0 OR Zlib |
 | ref-cast | 1.0.27 | MIT OR Apache-2.0 |
 | ref-cast-impl | 1.0.27 | MIT OR Apache-2.0 |
 | regex | 1.13.1 | MIT OR Apache-2.0 |
 | regex-automata | 0.4.18 | MIT OR Apache-2.0 |
 | regex-syntax | 0.8.11 | MIT OR Apache-2.0 |
+| relative-path | 2.0.3 | MIT OR Apache-2.0 |
 | reqwest | 0.13.5 | MIT OR Apache-2.0 |
 | reqwest | 0.12.28 | MIT OR Apache-2.0 |
+| rfd | 0.17.2 | MIT |
 | ring | 0.17.14 | Apache-2.0 AND ISC |
+| rquickjs | 0.14.0 | MIT |
+| rquickjs-core | 0.14.0 | MIT |
+| rquickjs-sys | 0.14.0 | MIT |
 | rustc-hash | 2.1.3 | Apache-2.0 OR MIT |
 | rustc_version | 0.4.1 | MIT OR Apache-2.0 |
 | rustix | 1.1.6 | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT |
@@ -308,9 +352,10 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | rustversion | 1.0.23 | MIT OR Apache-2.0 |
 | ryu | 1.0.23 | Apache-2.0 OR BSL-1.0 |
 | same-file | 1.0.6 | Unlicense/MIT |
+| schannel | 0.1.30 | MIT |
 | schemars | 0.8.22 | MIT |
-| schemars | 1.2.3 | MIT |
 | schemars | 0.9.0 | MIT |
+| schemars | 1.2.3 | MIT |
 | schemars_derive | 0.8.22 | MIT |
 | scopeguard | 1.2.0 | MIT OR Apache-2.0 |
 | selectors | 0.38.0 | MPL-2.0 |
@@ -334,6 +379,7 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | shlex | 2.0.1 | MIT OR Apache-2.0 |
 | signal-hook-registry | 1.4.8 | MIT OR Apache-2.0 |
 | simd-adler32 | 0.3.10 | MIT |
+| simdutf8 | 0.1.5 | MIT OR Apache-2.0 |
 | siphasher | 1.0.4 | MIT OR Apache-2.0 |
 | slab | 0.4.12 | MIT |
 | smallvec | 1.16.4 | MIT OR Apache-2.0 |
@@ -345,10 +391,11 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | static_vcruntime | 3.0.0 | MIT OR Apache-2.0 OR Zlib |
 | string_cache | 0.9.0 | MIT OR Apache-2.0 |
 | string_cache_codegen | 0.6.1 | MIT OR Apache-2.0 |
+| stringprep | 0.1.5 | MIT/Apache-2.0 |
 | strsim | 0.11.1 | MIT |
 | subtle | 2.6.1 | BSD-3-Clause |
-| syn | 3.0.9 | MIT OR Apache-2.0 |
 | syn | 2.0.119 | MIT OR Apache-2.0 |
+| syn | 3.0.9 | MIT OR Apache-2.0 |
 | syn | 1.0.109 | MIT OR Apache-2.0 |
 | sync_wrapper | 1.0.2 | Apache-2.0 |
 | synstructure | 0.14.0 | MIT |
@@ -361,6 +408,8 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | tauri-codegen | 2.7.4 | Apache-2.0 OR MIT |
 | tauri-macros | 2.7.4 | Apache-2.0 OR MIT |
 | tauri-plugin | 2.7.2 | Apache-2.0 OR MIT |
+| tauri-plugin-dialog | 2.8.4 | Apache-2.0 OR MIT |
+| tauri-plugin-fs | 2.7.1 | Apache-2.0 OR MIT |
 | tauri-plugin-global-shortcut | 2.4.1 | Apache-2.0 OR MIT |
 | tauri-plugin-opener | 2.7.2 | Apache-2.0 OR MIT |
 | tauri-plugin-updater | 2.14.1 | Apache-2.0 OR MIT |
@@ -386,9 +435,9 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | toml | 0.8.2 | MIT OR Apache-2.0 |
 | toml_datetime | 1.1.2+spec-1.1.0 | MIT OR Apache-2.0 |
 | toml_datetime | 0.6.3 | MIT OR Apache-2.0 |
-| toml_edit | 0.19.15 | MIT OR Apache-2.0 |
-| toml_edit | 0.25.17+spec-1.1.0 | MIT OR Apache-2.0 |
 | toml_edit | 0.20.2 | MIT OR Apache-2.0 |
+| toml_edit | 0.25.17+spec-1.1.0 | MIT OR Apache-2.0 |
+| toml_edit | 0.19.15 | MIT OR Apache-2.0 |
 | toml_parser | 1.1.5+spec-1.1.0 | MIT OR Apache-2.0 |
 | toml_writer | 1.1.3+spec-1.1.0 | MIT OR Apache-2.0 |
 | tower | 0.5.3 | MIT |
@@ -400,10 +449,15 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | tracing-core | 0.1.36 | MIT |
 | tray-icon | 0.25.1 | MIT OR Apache-2.0 |
 | try-lock | 0.2.5 | MIT |
+| ttf-parser | 0.25.1 | MIT OR Apache-2.0 |
+| type1-encoding-parser | 0.1.1 | MIT |
 | typed-path | 0.13.0 | MIT OR Apache-2.0 |
 | typeid | 1.0.3 | MIT OR Apache-2.0 |
 | typenum | 1.20.1 | MIT OR Apache-2.0 |
+| unicode-bidi | 0.3.18 | MIT OR Apache-2.0 |
 | unicode-ident | 1.0.27 | (MIT OR Apache-2.0) AND Unicode-3.0 |
+| unicode-normalization | 0.1.26 | (MIT OR Apache-2.0) AND Unicode-3.0 |
+| unicode-properties | 0.1.5 | (MIT OR Apache-2.0) AND Unicode-3.0 |
 | unicode-segmentation | 1.13.3 | MIT OR Apache-2.0 |
 | untrusted | 0.9.0 | ISC |
 | url | 2.5.8 | MIT OR Apache-2.0 |
@@ -426,6 +480,7 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | webview2-com | 0.39.1 | MIT |
 | webview2-com-macros | 0.8.1 | MIT |
 | webview2-com-sys | 0.39.1 | MIT |
+| weezl | 0.1.12 | MIT OR Apache-2.0 |
 | winapi-util | 0.1.11 | Unlicense OR MIT |
 | window-vibrancy | 0.8.1 | Apache-2.0 OR MIT |
 | windows | 0.62.2 | MIT OR Apache-2.0 |
@@ -439,15 +494,15 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | windows-registry | 0.6.1 | MIT OR Apache-2.0 |
 | windows-result | 0.4.1 | MIT OR Apache-2.0 |
 | windows-strings | 0.5.1 | MIT OR Apache-2.0 |
-| windows-sys | 0.60.2 | MIT OR Apache-2.0 |
-| windows-sys | 0.59.0 | MIT OR Apache-2.0 |
 | windows-sys | 0.61.2 | MIT OR Apache-2.0 |
-| windows-targets | 0.52.6 | MIT OR Apache-2.0 |
+| windows-sys | 0.59.0 | MIT OR Apache-2.0 |
+| windows-sys | 0.60.2 | MIT OR Apache-2.0 |
 | windows-targets | 0.53.5 | MIT OR Apache-2.0 |
+| windows-targets | 0.52.6 | MIT OR Apache-2.0 |
 | windows-threading | 0.2.1 | MIT OR Apache-2.0 |
 | windows-version | 0.1.7 | MIT OR Apache-2.0 |
-| windows_x86_64_msvc | 0.53.1 | MIT OR Apache-2.0 |
 | windows_x86_64_msvc | 0.52.6 | MIT OR Apache-2.0 |
+| windows_x86_64_msvc | 0.53.1 | MIT OR Apache-2.0 |
 | winnow | 1.0.4 | MIT |
 | winnow | 0.5.40 | MIT |
 | winreg | 0.56.0 | MIT |
@@ -476,6 +531,7 @@ MIT OR Apache-2.0: 196, MIT: 108, Apache-2.0 OR MIT: 49, Unicode-3.0: 18, Unlice
 | zip | 9.5.0 | MIT |
 | zlib-rs | 0.6.8 | Zlib |
 | zmij | 1.0.23 | MIT |
+| zopfli | 0.8.4 | Apache-2.0 |
 | zvariant | 5.15.1 | MIT |
 | zvariant_derive | 5.15.1 | MIT |
 | zvariant_utils | 4.2.0 | MIT |
