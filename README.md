@@ -319,6 +319,8 @@ No: GÉNESIS es software propietario. Este repositorio solo publica los instalad
 
 GÉNESIS busca versiones nuevas al abrirse y cada 6 horas. Cuando hay una, aparece una banda arriba con **«Actualizar ahora»**: la baja, comprueba que la firmó Brakescode y la instala. Un archivo cambiado por el camino no pasa la comprobación y no se instala. La app se cierra y vuelve a abrir sola.
 
+**¿Te dice que no pudo bajar la actualización?** Pasaba en la 0.2.5 si el DNS de tu equipo fallaba. Descarga el instalador de la [última versión](../../releases/latest) y ábrelo: se instala encima, sin perder tus datos, y desde la 0.2.6 las actualizaciones usan una vía de respaldo y se reintentan solas.
+
 </div>
 
 ## Cuéntanos qué mejorar
